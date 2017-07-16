@@ -1,8 +1,9 @@
 ﻿<!DOCTYPE html>
 <html ng-app="Contoso.University">
 <head>
-    <title></title>
+    <title> {{ Title }} </title>
 	<meta charset="utf-8" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
     <base href="/" />
 </head>
 <body>
@@ -13,10 +14,19 @@
     <script src="Scripts/bootstrap.js"></script>
 
     <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <script src="Scripts/angular-cookies.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-touch.js"></script>
+    <script src="Scripts/angular-sanitize.js"></script>
     <script src="Scripts/angular-ui-router.js"></script>
+
+    <script src="Scripts/oclazyload/dist/ocLazyLoad.js"></script>
+
 
     <script src="Contoso/Contoso.js"></script>
     <script src="Contoso/Router.js"></script>
-    <script src="Contoso/Controllsers/HomeController.js"></script>
+    <script src="Contoso/config.lazyload.js"></script>
+    <script src="Contoso/Controllers/HomeController.js"></script>
 </body>
 </html>

@@ -1,0 +1,99 @@
+﻿<div class="container body-content">
+
+
+    <h2>Students</h2>
+
+    <p>
+        <a ui-sref="home.CreateStudent">Create New</a>
+    </p>
+    <form action="/Student" method="get">
+        <p>
+            Find by name: <input id="SearchString" name="SearchString" type="text" value="" />
+            <input type="submit" value="Search" />
+        </p>
+    </form><table class="table">
+        <tr>
+            <th>
+                <a href="/Student?sortOrder=name_desc">Last Name</a>
+            </th>
+            <th>
+                First Name
+            </th>
+            <th>
+                <a href="/Student?sortOrder=Date">Enrollment Date</a>
+            </th>
+            <th></th>
+        </tr>
+
+        <tr>
+            <td>
+                Alexander
+            </td>
+            <td>
+                Carson
+            </td>
+            <td>
+                2010-09-01
+            </td>
+            <td>
+                <a href="/Student/Edit/314">Edit</a> |
+                <a href="/Student/Details/314">Details</a> |
+                <a href="/Student/Delete/314">Delete</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Ali(PAK)
+            </td>
+            <td>
+                Anwer
+            </td>
+            <td>
+                2017-07-12
+            </td>
+            <td>
+                <a href="/Student/Edit/303">Edit</a> |
+                <a href="/Student/Details/303">Details</a> |
+                <a href="/Student/Delete/303">Delete</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Alonso
+            </td>
+            <td>
+                Meredith
+            </td>
+            <td>
+                2012-09-01
+            </td>
+            <td>
+                <a href="/Student/Edit/307">Edit</a> |
+                <a href="/Student/Details/307">Details</a> |
+                <a href="/Student/Delete/307">Delete</a>
+            </td>
+        </tr>
+
+    </table>
+    <br />
+    Page 1 of 7
+
+    <div class="pagination-container">
+        <ul class="pagination">
+            <li class="active"><a>1</a></li>
+            <li>
+                <a href="/Student?page=2">2</a>
+            </li>
+            <li><a href="/Student?page=3">3</a></li>
+            <li>
+                <a href="/Student?page=4">4</a>
+            </li>
+            <li><a href="/Student?page=5">5</a></li>
+            <li>
+                <a href="/Student?page=6">6</a>
+            </li>
+            <li><a href="/Student?page=7">7</a></li>
+            <li class="PagedList-skipToNext"><a href="/Student?page=2" rel="next">»</a></li>
+        </ul>
+    </div>
+</div>

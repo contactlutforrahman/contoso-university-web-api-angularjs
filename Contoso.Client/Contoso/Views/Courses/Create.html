@@ -1,0 +1,64 @@
+﻿<div class="container body-content">
+
+
+
+    <h2>Create</h2>
+
+
+    <form action="/Course/Create" method="post">
+        <input name="__RequestVerificationToken" type="hidden" value="5h1CsJfv--X6SXArJObYhs4xjyUX3xnzQpVl4bP_HOR9bvXQ3gED8x0Wfst2QIN9XRnmv8HpVafAlKet7nDBq2RThT4QSL_K8vY2NqTOf6U1" />    <div class="form-horizontal">
+            <h4>Course</h4>
+            <hr />
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="CourseID">Number</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-number="The field Number must be a number." data-val-required="The Number field is required." id="CourseID" name="CourseID" type="number" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="CourseID" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Title">Title</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-length="The field Title must be a string with a minimum length of 3 and a maximum length of 50." data-val-length-max="50" data-val-length-min="3" id="Title" name="Title" type="text" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Title" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Credits">Credits</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-number="The field Credits must be a number." data-val-range="The field Credits must be between 0 and 5." data-val-range-max="5" data-val-range-min="0" data-val-required="The Credits field is required." id="Credits" name="Credits" type="number" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Credits" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="DepartmentID">Department</label>
+                <div class="col-md-10">
+                    <select class="form-control" id="DepartmentID" name="DepartmentID">
+                        <option value="59">Economics</option>
+                        <option value="67">Engineering</option>
+                        <option value="60">English</option>
+                        <option value="63">Information Technology</option>
+                        <option value="65">Mathematics</option>
+                        <option value="66">My Department</option>
+                    </select>
+                    <span class="field-validation-valid text-danger" data-valmsg-for="DepartmentID" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div>
+        <a ui-sref="home.courses">Back to List</a>
+    </div>
+
+
+</div>

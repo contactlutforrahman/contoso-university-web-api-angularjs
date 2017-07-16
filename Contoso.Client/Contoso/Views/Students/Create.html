@@ -1,0 +1,47 @@
+﻿<div class="container body-content">
+
+
+
+    <h2>Create</h2>
+
+
+    <form action="/Student/Create" method="post">
+        <div class="form-horizontal">
+            <h4>Student</h4>
+            <hr />
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="LastName">Last Name</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-length="The field Last Name must be a string with a maximum length of 50." data-val-length-max="50" data-val-required="The Last Name field is required." id="LastName" name="LastName" type="text" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="LastName" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="FirstMidName">First Name</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-length="First name cannot be longer than 50 characters." data-val-length-max="50" data-val-required="The First Name field is required." id="FirstMidName" name="FirstMidName" type="text" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="FirstMidName" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="EnrollmentDate">Enrollment Date</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-date="The field Enrollment Date must be a date." data-val-required="The Enrollment Date field is required." id="EnrollmentDate" name="EnrollmentDate" type="date" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="EnrollmentDate" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div>
+        <a ui-sref="home.students">Back to List</a>
+    </div>
+</div>

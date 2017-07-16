@@ -1,0 +1,114 @@
+﻿<div class="container body-content">
+
+
+
+    <h2>Create</h2>
+
+
+    <form action="/Instructor/Create" method="post">
+        <input name="__RequestVerificationToken" type="hidden" value="jvVoKLwgOkRj7VP0A2HDppg4Hmm6lgDYY0Bg2bfgVAt6VRrK3jLmAsaNz38Fspybhuotlk8gv6lSOxw4uWaJ2otzn-eZApikuPCW4sFyCZM1" />    <div class="form-horizontal">
+            <h4>Instructor</h4>
+            <hr />
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="LastName">Last Name</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-length="The field Last Name must be a string with a maximum length of 50." data-val-length-max="50" data-val-required="The Last Name field is required." id="LastName" name="LastName" type="text" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="LastName" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="FirstMidName">First Name</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-length="The field First Name must be a string with a maximum length of 50." data-val-length-max="50" data-val-required="The First Name field is required." id="FirstMidName" name="FirstMidName" type="text" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="FirstMidName" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="HireDate">Hire Date</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" data-val="true" data-val-date="The field Hire Date must be a date." data-val-required="The Hire Date field is required." id="HireDate" name="HireDate" type="date" value="" />
+                    <span class="field-validation-valid text-danger" data-valmsg-for="HireDate" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="OfficeAssignment_Location">Office Location</label>
+                <div class="col-md-10">
+                    <input class="text-box single-line" data-val="true" data-val-length="The field Office Location must be a string with a maximum length of 50." data-val-length-max="50" id="OfficeAssignment_Location" name="OfficeAssignment.Location" type="text" value="" />
+                    <span class="field-validation-valid" data-valmsg-for="OfficeAssignment.Location" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <table>
+                        <tr></tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox"
+                                       name="selectedCourses"
+                                       value="1045" />
+                                1045   Calculus
+                            </td>
+                            <td>
+                                <input type="checkbox"
+                                       name="selectedCourses"
+                                       value="1050" />
+                                1050   Chemistry
+                            </td>
+                            <td>
+                                <input type="checkbox"
+                                       name="selectedCourses"
+                                       value="2021" />
+                                2021   Composition
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox"
+                                       name="selectedCourses"
+                                       value="2042" />
+                                2042   Literature
+                            </td>
+                            <td>
+                                <input type="checkbox"
+                                       name="selectedCourses"
+                                       value="3141" />
+                                3141   Trigonometry
+                            </td>
+                            <td>
+                                <input type="checkbox"
+                                       name="selectedCourses"
+                                       value="4022" />
+                                4022   Microeconomics
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox"
+                                       name="selectedCourses"
+                                       value="4041" />
+                                4041   Macroeconomics
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div>
+        <a ui-sref="home.instructors">Back to List</a>
+    </div>
+
+</div>
