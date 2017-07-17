@@ -8,6 +8,14 @@
 
         get: function (url) {
             return $http.get(baseUrl + url);
+        },
+
+        getById: function (url, id) {
+            return $http.get(baseUrl + url + "/" + id);
+        },
+
+        update: function (url, id, data) {
+            return $http.put(baseUrl + url + "/" + id, data);
         }
     }
 }]);

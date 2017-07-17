@@ -6,9 +6,9 @@
 </style>
 <div class="container body-content">
 
-    <h2> Update </h2>
+    <h2>Create</h2>
 
-    <form name="studentForm" ng-init="getStudentById()" class="form-horizontal">
+    <form name="studentForm" class="form-horizontal">
         <div class="form-horizontal">
             <h4>Student</h4>
             <hr />
@@ -39,7 +39,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" ng-disabled="studentForm.$invalid" value="Create" ng-click="updateStudent(student)" class="btn btn-default" />
+                    <input type="submit" ng-disabled="studentForm.$invalid" value="Create" ng-click="saveStudent(student)" class="btn btn-default" />
                 </div>
             </div>
         </div>

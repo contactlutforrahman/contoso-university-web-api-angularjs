@@ -13,7 +13,7 @@
         .state("home.students", {
             url: "students",
             title: "Student Lists",
-            views:{
+            views: {
                 'subcontents': {
                     templateUrl: "Contoso/Views/Students/List.html",
                     controller: "StudentController",
@@ -25,8 +25,6 @@
                 }
             }
         })
-
-
 
         .state("home.CreateStudent", {
             url: "create-student",
@@ -44,7 +42,21 @@
             }
         })
 
-
+            .state("home.editStudent", {
+                url: "edit-student/{studentId}",
+                title: "Edit Student",
+                views: {
+                    'subcontents': {
+                        templateUrl: "Contoso/Views/Students/Edit.html",
+                        controller: "StudentController",
+                        resolve: {
+                            deps: ["$ocLazyLoad", function ($ocLazyLoad) {
+                                return $ocLazyLoad.load(["Contoso/Controllers/StudentController.js", "Contoso/Factories/StudentFactory.js", "Contoso/Factories/ContosoFactory.js"])
+                            }]
+                        }
+                    }
+                }
+            })
 
         .state("home.courses", {
             url: "courses",
@@ -93,8 +105,6 @@
                 }
             }
         })
-
-
 
         .state("home.createInstructor", {
             url: "create-instructor",

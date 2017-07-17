@@ -36,7 +36,7 @@
                 {{ student.EnrollmentDate | date: 'MMM d, y'}}
             </td>
             <td>
-                <a >Edit</a> |
+                <a ui-sref="home.editStudent({ studentId: student.Id })">Edit</a> |
                 <a >Details</a> |
                 <a >Delete</a>
             </td>
