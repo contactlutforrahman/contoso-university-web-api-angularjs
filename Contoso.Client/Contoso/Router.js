@@ -58,6 +58,22 @@
                 }
             })
 
+            .state("home.studentDetails", {
+                url: "student/{studentId}",
+                title: "Student Details",
+                views: {
+                    'subcontents': {
+                        templateUrl: "Contoso/Views/Students/Details.html",
+                        controller: "StudentController",
+                        resolve: {
+                            deps: ["$ocLazyLoad", function ($ocLazyLoad) {
+                                return $ocLazyLoad.load(["Contoso/Controllers/StudentController.js", "Contoso/Factories/StudentFactory.js", "Contoso/Factories/ContosoFactory.js"])
+                            }]
+                        }
+                    }
+                }
+            })
+
         .state("home.courses", {
             url: "courses",
             title: "Course Lists",
