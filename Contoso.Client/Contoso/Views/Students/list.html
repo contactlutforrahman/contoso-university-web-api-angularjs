@@ -36,9 +36,9 @@
                 {{ student.EnrollmentDate | date: 'MMM d, y'}}
             </td>
             <td>
-                <a ui-sref="home.editStudent({ studentId: student.Id })">Edit</a> |
-                <a ui-sref="home.studentDetails({ studentId: student.Id })">Details</a> |
-                <a >Delete</a>
+                <a class="btn btn-sm btn-success" ui-sref="home.editStudent({ studentId: student.Id })">Edit</a> |
+                <a class="btn btn-sm btn-info" ui-sref="home.studentDetails({ studentId: student.Id })">Details</a> |
+                <a  class="btn btn-danger btn-sm" ng-click="confirmDelete(student.Id)">Delete</a>
             </td>
         </tr>
 

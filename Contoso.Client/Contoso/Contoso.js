@@ -1,5 +1,5 @@
 ﻿angular.module("Contoso.University", ['ngAnimate', "ngCookies",
-        'ngResource', 'ngSanitize', 'ngTouch', "ui.router", "oc.lazyLoad"]);
+        'ngResource', 'ngSanitize', 'ngTouch', "ui.bootstrap", "ui.router", "toastr", "oc.lazyLoad"]);
 
 angular.module("Contoso.University").config(['$controllerProvider', '$compileProvider', '$filterProvider', '$provide', function ($controllerProvider, $compileProvider, $filterProvider, $provide) {
     angular.module("Contoso.University").controller = $controllerProvider.register;

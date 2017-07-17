@@ -16,6 +16,10 @@
 
         update: function (url, id, data) {
             return $http.put(baseUrl + url + "/" + id, data);
+        },
+
+        delete: function (url, id) {
+            return $http.delete(baseUrl + url + "/" + id);
         }
     }
 }]);

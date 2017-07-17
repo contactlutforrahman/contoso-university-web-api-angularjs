@@ -1,10 +1,10 @@
 ﻿angular.module("Contoso.University")
-.controller("StudentController", ["$scope", "$stateParams", "StudentFactory", function ($scope, $stateParams, StudentFactory) {
+.controller("StudentController", ["$scope", "$rootScope", "$stateParams", "$uibModal", "toastr", "StudentFactory", function ($scope, $rootScope, $stateParams, $uibModal, toastr, StudentFactory) {
     $scope.anotherTitle = "Another Title";
 
     $scope.saveStudent = function (student) {
         StudentFactory.saveStudent("api/students", student).then(function (resp) {
-            console.log(resp);
+            toastr.success('Student information has been saved successfully!');
         });
     };
 
@@ -26,4 +26,36 @@
             console.log(response);
         });
     };
+
+    $scope.confirmDelete = function (studentId) {
+        var modalInstance = $uibModal.open({
+            templateUrl: "Contoso/Views/Students/Delete.Confirm.html",
+            controller: "StudentController",
+            resolve: {
+                item: function () {
+                    StudentFactory.getStudentById("api/students", studentId).then(function (response) {
+                        $rootScope.student = response.data;
+                        $rootScope.student.EnrollmentDate = new Date(response.data.EnrollmentDate);
+                    });
+                }
+            }
+        });
+
+        modalInstance.result.then(function (selectedItem) {
+            $scope.selected = selectedItem;
+        }, function () {
+
+        });
+
+        $rootScope.cancel = function () {
+            modalInstance.close();
+        };
+    };
+
+    $scope.deleteStudent = function (studentId) {
+        StudentFactory.deleteStudent("api/students", studentId).then(function (response) {
+            $rootScope.cancel();
+            toastr.error('Student information has been deleted.');
+        })
+    }
 }]);

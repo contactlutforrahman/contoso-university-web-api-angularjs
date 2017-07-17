@@ -15,6 +15,10 @@
 
         updateStudent: function (url, id, student) {
             return ContosoFactory.update(url, id, student);
+        },
+
+        deleteStudent: function (url, id) {
+            return ContosoFactory.delete(url, id);
         }
     }
 }]);
