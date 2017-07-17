@@ -1,0 +1,14 @@
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.Data\bin\Debug\Contoso.Data.dll.config
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.Data\bin\Debug\Contoso.Data.dll
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.Data\bin\Debug\Contoso.Data.pdb
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.Data\bin\Debug\Contoso.Core.dll
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.Data\bin\Debug\EntityFramework.dll
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.Data\bin\Debug\Contoso.Core.pdb
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.Data\bin\Debug\EntityFramework.xml
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.Data\obj\Debug\Contoso.Data.csprojResolveAssemblyReference.cache
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.Data\obj\Debug\Contoso.Data.dll
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.Data\obj\Debug\Contoso.Data.pdb
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.Data\obj\Debug\Contoso.Data.Migrations.ContosoMigration.resources
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.Data\obj\Debug\Contoso.Data.csproj.GenerateResource.Cache
