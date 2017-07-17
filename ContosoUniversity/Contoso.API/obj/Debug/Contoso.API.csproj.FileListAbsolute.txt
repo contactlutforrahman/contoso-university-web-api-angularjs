@@ -67,3 +67,6 @@ D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.API\bin\Contos
 D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.API\bin\Contoso.Core.pdb
 D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.API\bin\Contoso.Data.pdb
 D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.API\bin\Contoso.Service.pdb
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.API\bin\System.Web.Cors.dll
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.API\bin\System.Web.Http.Cors.dll
+D:\contoso-university-web-api-angularjs\ContosoUniversity\Contoso.API\bin\System.Web.Http.Cors.xml
