@@ -11,6 +11,8 @@ using System.Web.Http.Description;
 using Contoso.Core.Domain;
 using Contoso.Data.Context;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Contoso.API.Controllers
 {
@@ -18,11 +20,37 @@ namespace Contoso.API.Controllers
     {
         private ContosoUniversityContext db = new ContosoUniversityContext();
 
+        private SqlCommand cmd;
+        private DataSet ds;
+        private DataTable dt;
+        private SqlDataAdapter da;
+
         // GET: api/Students
-        public async Task<List<Student>> GetStudents()
+        public IHttpActionResult GetStudents()
         {
-            var students = await db.Students.ToListAsync();
-            return students;
+            var connectionString = ConfigurationManager.ConnectionStrings["ContosoUniversityContext"].ConnectionString;
+            SqlDataReader reader;
+
+            List<Student> students = new List<Student>();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand sqlCommand = new SqlCommand("Select * from Student", connection);
+                reader = sqlCommand.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var student = new Student();
+                    student.Id = Convert.ToInt32(reader["Id"]);
+                    student.LastName = reader["LastName"].ToString();
+                    student.FirstMidName = reader["FirstName"].ToString();
+                    student.EnrollmentDate = Convert.ToDateTime(reader["EnrollmentDate"]);
+                    students.Add(student);
+                }
+            }
+            
+            //var students = await db.Students.ToListAsync();
+            return Ok(students);
         }
 
         // GET: api/Students/5

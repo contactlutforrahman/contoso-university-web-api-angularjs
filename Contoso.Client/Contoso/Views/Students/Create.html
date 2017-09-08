@@ -16,7 +16,7 @@
             <div class="form-group">
                 <label class="control-label col-md-2" for="LastName">Last Name</label>
                 <div class="col-md-10">
-                    <input class="form-control text-box single-line" type="text" name="LastName" ng-model="student.LastName" ng-minlength="3" required/>
+                    <input class="form-control text-box single-line" type="text" name="LastName" ng-model="student.LastName" ng-minlength="3" placeholder="i.e. Keats" required/>
                     <span class="field-validation-valid text-danger" ng-show="studentForm.LastName.$invalid"> Required!</span>
                 </div>
             </div>
@@ -24,8 +24,16 @@
             <div class="form-group">
                 <label class="control-label col-md-2" for="FirstMidName">First Name</label>
                 <div class="col-md-10">
-                    <input class="form-control text-box single-line" name="FirstMidName" type="text" ng-model="student.FirstMidName" />
-                    <span class="field-validation-valid text-danger"></span>
+                    <input class="form-control text-box single-line" name="FirstMidName" type="text" ng-model="student.FirstMidName" placeholder="i.e. John" required/>
+                    <span class="field-validation-valid text-danger" ng-show="studentForm.FirstMidName.$invalid"> Required!</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="FirstMidName"> Email </label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" name="EmailAddress" type="email" ng-model="student.EmailAddress" placeholder="i.e. info@johnkeats.com" required />
+                    <span class="field-validation-valid text-danger" ng-show="studentForm.EmailAddress.$invalid"> Required!</span>
                 </div>
             </div>
 

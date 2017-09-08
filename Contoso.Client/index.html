@@ -3,13 +3,47 @@
 <head>
     <title> {{ Title }} </title>
 	<meta charset="utf-8" />
-    <link href="Content/bootstrap.css" rel="stylesheet" />
-    <link href="Scripts/angular-toastr/dist/angular-toastr.css" rel="stylesheet" />
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/select.css" rel="stylesheet" />
+    <link href="/Scripts/angular-toastr/dist/angular-toastr.css" rel="stylesheet" />
 
-    <script src="Scripts/jquery-3.1.1.js"></script>
-    <script src="Scripts/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.bootstrap2.css"> -->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.bootstrap3.css">-->
+
+
+    <script src="/Scripts/jquery-3.1.1.js"></script>
+    <script src="/Scripts/bootstrap.js"></script>
 
     <base href="/" />
+
+    <style>
+        body {
+            padding: 35px;
+        }
+
+        .select2 > .select2-choice.ui-select-match {
+            /* Because of the inclusion of Bootstrap */
+            height: 29px;
+        }
+
+        .selectize-control > .selectize-dropdown {
+            top: 36px;
+        }
+        /* Some additional styling to demonstrate that append-to-body helps achieve the proper z-index layering. */
+        .select-box {
+            background: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .alert-info.positioned {
+            margin-top: 1em;
+            position: relative;
+            z-index: 10000; /* The select2 dropdown has a z-index of 9999 */
+        }
+    </style>
 </head>
 <body>
     
@@ -31,6 +65,7 @@
     <script src="Scripts/angular-toastr/dist/angular-toastr.js"></script>
     <script src="Scripts/angular-toastr/dist/angular-toastr.tpls.js"></script>
     <script src="Scripts/angular-ui-router.js"></script>
+    <script src="Scripts/select.js"></script>
 
     <script src="Scripts/oclazyload/dist/ocLazyLoad.js"></script>
 

@@ -5,7 +5,7 @@
     <p>
         <a ui-sref="home.createDepartment">Create New</a>
     </p>
-    <table class="table">
+    <table class="table" ng-init="getDepartments()">
         <tr>
             <th>
                 Name
@@ -21,120 +21,26 @@
             </th>
             <th></th>
         </tr>
-        <tr>
+        <tr ng-repeat="department in departments">
             <td>
-                Economics
+                {{ department.Name }}
             </td>
             <td>
-                $100,000.00
+                ${{ department.Budget }}
             </td>
             <td>
-                2007-09-01
+                {{ department.StartDate | date: "dd-MM-yyyy" }}
             </td>
             <td>
-                Kapoor, Candace
+                {{ department.Administrator.FirstMidName }} {{ department.Administrator.LastName }}
             </td>
             <td>
-                <a href="/Department/Edit/59">Edit</a> |
-                <a href="/Department/Details/59">Details</a> |
-                <a href="/Department/Delete/59">Delete</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                English
-            </td>
-            <td>
-                $350,000.00
-            </td>
-            <td>
-                2007-09-01
-            </td>
-            <td>
-                Abercrombie, Kim
-            </td>
-            <td>
-                <a href="/Department/Edit/60">Edit</a> |
-                <a href="/Department/Details/60">Details</a> |
-                <a href="/Department/Delete/60">Delete</a>
+                <a class="btn btn-sm btn-success" ui-sref="home.editDepartment({ departmentId: department.Id })">Edit</a> |
+                <a class="btn btn-sm btn-info" ui-sref="home.departmentDetails({ departmentId: department.Id })">Details</a> |
+                <a class="btn btn-danger btn-sm" ng-click="confirmDelete(department.Id)">Delete</a>
             </td>
         </tr>
-        <tr>
-            <td>
-                Information Technology
-            </td>
-            <td>
-                $2,345,100.00
-            </td>
-            <td>
-                2017-07-12
-            </td>
-            <td>
-                Vihan, Jackie
-            </td>
-            <td>
-                <a href="/Department/Edit/63">Edit</a> |
-                <a href="/Department/Details/63">Details</a> |
-                <a href="/Department/Delete/63">Delete</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Mathematics
-            </td>
-            <td>
-                $100,000.00
-            </td>
-            <td>
-                2007-09-01
-            </td>
-            <td>
-                Fakhouri, Fadi
-            </td>
-            <td>
-                <a href="/Department/Edit/65">Edit</a> |
-                <a href="/Department/Details/65">Details</a> |
-                <a href="/Department/Delete/65">Delete</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                My Department
-            </td>
-            <td>
-                $56,666.00
-            </td>
-            <td>
-                2015-07-11
-            </td>
-            <td>
-                Jones, Samuel
-            </td>
-            <td>
-                <a href="/Department/Edit/66">Edit</a> |
-                <a href="/Department/Details/66">Details</a> |
-                <a href="/Department/Delete/66">Delete</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Engineering
-            </td>
-            <td>
-                $350,000.00
-            </td>
-            <td>
-                2007-09-01
-            </td>
-            <td>
-                Harui, Roger
-            </td>
-            <td>
-                <a href="/Department/Edit/67">Edit</a> |
-                <a href="/Department/Details/67">Details</a> |
-                <a href="/Department/Delete/67">Delete</a>
-            </td>
-        </tr>
+        
     </table>
 
 </div>

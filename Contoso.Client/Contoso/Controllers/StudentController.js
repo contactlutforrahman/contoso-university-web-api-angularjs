@@ -4,7 +4,12 @@
 
     $scope.saveStudent = function (student) {
         StudentFactory.saveStudent("api/students", student).then(function (resp) {
-            toastr.success('Student information has been saved successfully!');
+            if (resp.status == 201 && resp.statusText == "Created") {
+                toastr.success('Student information has been saved successfully!');
+                $scope.student = null;
+            } else {
+                toastr.error('Could not save student information!');
+            }
         });
     };
 
@@ -24,6 +29,12 @@
     $scope.updateStudent = function (student) {
         StudentFactory.updateStudent("api/students", student.Id, student).then(function (response) {
             console.log(response);
+            if (response.status == 204 && response.statusText == "No Content") {
+                toastr.success('Student information has been updated successfully!');
+                $scope.student = null;
+            } else {
+                toastr.error('Could not be updated student information!');
+            }
         });
     };
 
@@ -54,8 +65,14 @@
 
     $scope.deleteStudent = function (studentId) {
         StudentFactory.deleteStudent("api/students", studentId).then(function (response) {
+            if (response.status == 201 && response.statusText == "Created") {
+                toastr.error('Student information has been deleted.');
+                $scope.student = null;
+            } else {
+                toastr.error('Student information has been deleted.');
+                $scope.student = null;
+            }
             $rootScope.cancel();
-            toastr.error('Student information has been deleted.');
         })
     }
 }]);

@@ -1,0 +1,63 @@
+﻿<style>
+    input.ng-invalid {
+        border: 1px solid red;
+    }
+</style>
+
+<div class="container body-content">
+
+    <h2> Update </h2>
+
+    <form name="courseForm" ng-init="getCourseById()">
+        <div class="form-horizontal">
+            <h4>Course</h4>
+            <hr />
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="CourseID"> Course ID </label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" name="CourseID" ng-model="course.CourseID" type="number" placeholder="101" required />
+                    <span class="field-validation-valid text-danger" ng-show="courseForm.CourseID.$invalid"> Required!</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Title">Title</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" name="Title" ng-model="course.Title" type="text" placeholder="Course Title" required />
+                    <span class="field-validation-valid text-danger" ng-show="courseForm.Title.$invalid"> Required!</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="Credits">Credits</label>
+                <div class="col-md-10">
+                    <input class="form-control text-box single-line" name="Credits" ng-model="course.Credits" ng-minlength="1" ng-maxlength="5" type="number" placeholder="123" required />
+                    <span class="field-validation-valid text-danger" ng-show="courseForm.Credits.$invalid"> Required!</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2" for="DepartmentID">Department</label>
+                <div class="col-md-10" ng-init="getDepartments()">
+                    <ui-select ng-model="department.selected" theme="select2" style="height:40px; font-size: 12px; width: 100%;" title="Choose a department">
+                        <ui-select-match placeholder="Select a department">{{ $select.selected.Name || $select.selected }}</ui-select-match>
+                        <ui-select-choices repeat="department in departments | propsFilter: {Name: $select.search}">
+                            <div ng-bind-html="department.Name | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Update" ng-disabled="courseForm.$invalid" ng-click="updateCourse(course, department.selected)" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div>
+        <a ui-sref="home.courses">Back to List</a>
+    </div>
+
+</div>

@@ -5,10 +5,10 @@
     <p>
         <a ui-sref="home.createCourse">Create New</a>
     </p>
-    <table class="table">
+    <table class="table" ng-init="getCourses()">
         <tr>
             <th>
-                Number
+                Course ID
             </th>
             <th>
                 Title
@@ -22,137 +22,23 @@
             <th></th>
         </tr>
 
-        <tr>
+        <tr ng-repeat="course in courses">
             <td>
-                1045
+                {{ course.CourseID }}
             </td>
             <td>
-                Calculus
+                {{ course.Title}}
             </td>
             <td>
-                4
+                {{ course.Credits}}
             </td>
             <td>
-                Mathematics
+                {{ course.Department.Name }}
             </td>
             <td>
-                <a href="/Course/Edit/1045">Edit</a> |
+                <a class="btn btn-sm btn-success" ui-sref="home.editCourse({ courseId: course.Id})">Edit</a> |
                 <a href="/Course/Details/1045">Details</a> |
                 <a href="/Course/Delete/1045">Delete</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                1050
-            </td>
-            <td>
-                Chemistry
-            </td>
-            <td>
-                3
-            </td>
-            <td>
-                Engineering
-            </td>
-            <td>
-                <a href="/Course/Edit/1050">Edit</a> |
-                <a href="/Course/Details/1050">Details</a> |
-                <a href="/Course/Delete/1050">Delete</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                2021
-            </td>
-            <td>
-                Composition
-            </td>
-            <td>
-                3
-            </td>
-            <td>
-                English
-            </td>
-            <td>
-                <a href="/Course/Edit/2021">Edit</a> |
-                <a href="/Course/Details/2021">Details</a> |
-                <a href="/Course/Delete/2021">Delete</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                2042
-            </td>
-            <td>
-                Literature
-            </td>
-            <td>
-                4
-            </td>
-            <td>
-                English
-            </td>
-            <td>
-                <a href="/Course/Edit/2042">Edit</a> |
-                <a href="/Course/Details/2042">Details</a> |
-                <a href="/Course/Delete/2042">Delete</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                3141
-            </td>
-            <td>
-                Trigonometry
-            </td>
-            <td>
-                4
-            </td>
-            <td>
-                Mathematics
-            </td>
-            <td>
-                <a href="/Course/Edit/3141">Edit</a> |
-                <a href="/Course/Details/3141">Details</a> |
-                <a href="/Course/Delete/3141">Delete</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                4022
-            </td>
-            <td>
-                Microeconomics
-            </td>
-            <td>
-                3
-            </td>
-            <td>
-                Economics
-            </td>
-            <td>
-                <a href="/Course/Edit/4022">Edit</a> |
-                <a href="/Course/Details/4022">Details</a> |
-                <a href="/Course/Delete/4022">Delete</a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                4041
-            </td>
-            <td>
-                Macroeconomics
-            </td>
-            <td>
-                3
-            </td>
-            <td>
-                Economics
-            </td>
-            <td>
-                <a href="/Course/Edit/4041">Edit</a> |
-                <a href="/Course/Details/4041">Details</a> |
-                <a href="/Course/Delete/4041">Delete</a>
             </td>
         </tr>
 

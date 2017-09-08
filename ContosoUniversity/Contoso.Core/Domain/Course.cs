@@ -9,9 +9,9 @@ namespace Contoso.Core.Domain
 {
     public class Course
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        [Display(Name = "Number")]
+        [Key]
         public int Id { get; set; }
+        public int CourseID { get; set; }
         [StringLength(50, MinimumLength = 3)]
         public string Title { get; set; }
         [Range(0, 5)]

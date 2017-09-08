@@ -1,8 +1,10 @@
 ﻿using Contoso.Core.Domain;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +30,27 @@ namespace Contoso.Data.Context
         public DbSet<Instructor> Instructors { get; set; }
         public DbSet<OfficeAssignment> OfficeAssignments { get; set; }
 
+
+        private static void OpenSqlConnection()
+        {
+            string connectionString = GetConnectionString();
+
+            using (SqlConnection connection = new SqlConnection())
+            {
+                connection.ConnectionString = connectionString;
+
+                connection.Open();
+            }
+        }
+
+        static private string GetConnectionString()
+        {
+            // To avoid storing the connection string in your code, 
+            // you can retrieve it from a configuration file.
+            return "Data Source=192.168.10.24; Initial Catalog =db_PMBS; Integrated Security =false; Persist Security Info =False; User ID =mislutfor; Password =1qazXSW@^@";
+        }
+
+        public string ConnectionString = ConfigurationManager.ConnectionStrings["ContosoUniversityContext"].ConnectionString;
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

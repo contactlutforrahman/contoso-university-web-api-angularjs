@@ -13,7 +13,7 @@ namespace Contoso.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201707170358170_ContosoMigration"; }
+            get { return "201707210958418_ContosoMigration"; }
         }
         
         string IMigrationMetadata.Source

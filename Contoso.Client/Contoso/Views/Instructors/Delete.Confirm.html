@@ -1,0 +1,31 @@
+﻿<div class="modal-demo">
+    <form method="post" class="form-horizontal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" ng-click="cancel()">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"> Are you sure, you want to delete this student information? </h4>
+        </div>
+        <div class="modal-body">
+            <table class="table table-striped table-hover">
+                <tr>
+                    <th> First Name </th>
+                    <th> Last Name </th>
+                    <th> Enrollment Date </th>
+                </tr>
+                <tr>
+                    <td> {{ student.FirstMidName }} </td>
+                    <td> {{ student.LastName }} </td>
+                    <td> {{ student.EnrollmentDate | date: "dd-MM-yyyy" }} </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="cancel()">Cancel</button>
+            <button type="submit" class="btn btn-danger" ng-click="deleteStudent(student.Id)" data-dismiss="modal">Ok</button>
+        </div>
+
+    </form>
+
+</div>
